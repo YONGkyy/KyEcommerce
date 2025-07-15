@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import AppFooter from './AppFooter.vue';
-import AppHeader from './AppHeader.vue';
+import AppFooter from './appFooter.vue';
+import AppHeader from './appHeader.vue';
+
+
 
 </script>
 
@@ -8,7 +10,7 @@ import AppHeader from './AppHeader.vue';
   <div >
     <AppHeader />
 
-    <main class="min-h-screen">
+    <main class="min-h-screen bg-white">
       <slot />
     </main>
 

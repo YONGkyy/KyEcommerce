@@ -1,5 +1,6 @@
 <template>
-  <div class="min-h-screen bg-gray-50">
+  <div class="min-h-screen bg-gray-50 dark:bg-gray-700">
+
     <!-- Animated Hero Slideshow Section -->
     <section class="relative h-screen overflow-hidden">
       <!-- Slideshow Container -->
@@ -141,7 +142,7 @@
             @click="selectCategory(category.id)"
           >
             <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 text-center group-hover:from-blue-50 group-hover:to-purple-50 transition-all duration-300 shadow-lg group-hover:shadow-xl">
-              <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:from-blue-600 group-hover:to-purple-700 transition-all duration-300 transform group-hover:rotate-12">
+              <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:from-blue-600 group-hover:to-purple-700 transition-all duration-300 transform group-hover:rotate-45">
                 <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="category.icon" />
                 </svg>
@@ -197,9 +198,10 @@
               <div class="flex items-center mb-4">
                 <div class="flex items-center">
                   <span v-for="star in 5" :key="star" class="text-yellow-400">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <Star class="w-4 h-4  fill-current "/>
+                    <!-- <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
+                    </svg> -->
                   </span>
                 </div>
                 <span class="text-sm text-gray-500 ml-2">({{ product.reviews }})</span>
@@ -216,9 +218,7 @@
                   @click="addToCart(product.id)"
                   class="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2 shadow-lg"
                 >
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m0 0L17 18m0 0v2a2 2 0 01-2 2H9a2 2 0 01-2-2v-2m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v9.03" />
-                  </svg>
+                  <ShoppingCart class="w-5 h-5" />
                   <span>Add</span>
                 </button>
               </div>
@@ -258,6 +258,7 @@
 </template>
 
 <script setup lang="ts">
+import { ShoppingCart, Star } from 'lucide-vue-next'
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 
 // Types

@@ -27,7 +27,7 @@ const allProducts = ref([
 <template>
   <section class="py-16">
     <div class="container mx-auto px-4">
-      <div class="flex flex-col lg:flex-row gap-8">
+      <div class="flex flex-col lg:flex-row gap-8 bg-white ">
         <!-- Filters Sidebar -->
         <div class="lg:w-1/4">
           <div class="bg-white rounded-lg shadow-md p-6">
